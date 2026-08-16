@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
       - name: myapp
-        # image: bish1983/bish-k8s:0.0.1
-        # imagePullPolicy: Always
-        image: nginx:latest
+        image: bish1983/bish-k8s:0.0.1
+        imagePullPolicy: Always
+        # image: nginx:latest
         ports:
         - containerPort: 80
