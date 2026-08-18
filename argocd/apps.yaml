@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-apps
+  namespace: default
+  labels:
+    purpose: "Development"
+    tech: "Python"
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: pythonapp
+    repoURL: https://github.com/bishweshwar1983/deployment_pipelines
+    targetRevision: main
