@@ -1,0 +1,10 @@
+bkZZVGZhZkF2YlFmVUswYg==
+
+
+nFYTfafAvbQfUK0b
+
+
+
+kubectl create clusterrolebinding argocd-application-controller-admin \
+  --clusterrole=cluster-admin \
+  --serviceaccount=default:argocd-application-controller
