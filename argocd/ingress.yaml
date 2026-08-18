@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocding
+  labels:
+    app.kubernetes.io/name: argocding
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: argocd.bish.thoughtbrains.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: argocd-server
+            port: 
+              number: 80
