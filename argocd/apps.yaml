@@ -8,7 +8,7 @@ metadata:
     tech: "Python"
 spec:
   destination:
-    namespace: default
+    namespace: pythonapptest
     server: https://kubernetes.default.svc
   project: default
   source:
