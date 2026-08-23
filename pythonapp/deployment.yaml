@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: bish1983/bish-k8s:0.0.2
+        image: bish1983/bish-k8s:0.0.3
         imagePullPolicy: Always
         volumeMounts:
         - name: app-log-dir
