@@ -8,11 +8,12 @@ metadata:
     tech: "Python"
 spec:
   destination:
-    namespace: pythonapptest
+    namespace: pythonapptest2
     server: https://kubernetes.default.svc
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - PruneLast=true
   project: default
   source:
     path: pythonapp

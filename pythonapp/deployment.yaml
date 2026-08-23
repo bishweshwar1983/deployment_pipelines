@@ -16,6 +16,15 @@ spec:
       - name: myapp
         image: bish1983/bish-k8s:0.0.2
         imagePullPolicy: Always
+        volumeMounts:
+        - name: app-log-dir
+          mountPath: /var/log/app/
         # image: nginx:latest
         ports:
         - containerPort: 80
+      
+      volumes:
+      - name: app-log-dir
+        hostPath:
+          path: /var/log/my-custom-app-logs
+          type: DirectoryOrCreate
