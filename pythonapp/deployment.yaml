@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp
-  namespace: pythonapptest
+  # namespace: pythonapptest
 spec:
   selector:
     matchLabels:

@@ -10,6 +10,9 @@ spec:
   destination:
     namespace: pythonapptest
     server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   project: default
   source:
     path: pythonapp
