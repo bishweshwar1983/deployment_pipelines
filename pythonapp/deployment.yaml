@@ -22,9 +22,20 @@ spec:
         # image: nginx:latest
         ports:
         - containerPort: 80
-      
+
+      - name: filebeat
+        image: docker.elastic.co/beats/filebeat:8.13.0
+        args: ["-c", "/etc/filebeat/filebeat.yml", "-e"]
+        volumeMounts:
+        - name: app-log-dir
+          mountPath: /var/log/app/
+          readOnly: true
+        - name: filebeat-config
+          mountPath: /etc/filebeat/
+
       volumes:
       - name: app-log-dir
-        hostPath:
-          path: /var/log/my-custom-app-logs
-          type: DirectoryOrCreate
+        emptyDir: {}
+      - name: filebeat-config
+        configMap:
+          name: filebeat-config
